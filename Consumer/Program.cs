@@ -21,7 +21,7 @@ using (var chanel = connection.CreateModel())
         var body = ea.Body.ToArray();
         var message = Encoding.UTF8.GetString(body);
 
-        Console.WriteLine("[x] Recebido - {0}", message);
+        Console.WriteLine(message);
     };
     chanel.BasicConsume(queue: "myQueue", autoAck: true, consumer: consumer);
 
